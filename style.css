@@ -1,0 +1,158 @@
+
+        /* RESET E CONFIGURAÇÕES GERAIS DE ACESSIBILIDADE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #F4F6F9;
+            color: #1A1A1A;
+            line-height: 1.6;
+            font-size: 20px; /* Fonte base ampliada */
+        }
+
+        /* CABEÇALHO FIXO E DE ALTO CONTRASTE */
+        header {
+            background-color: #003366; /* Azul escuro */
+            color: #FFFFFF;
+            padding: 20px 15px;
+            text-align: center;
+            border-bottom: 5px solid #FFCC00; /* Amarelo para destaque */
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* CONTAINER PRINCIPAL */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* MENSAGEM DE BOAS-VINDAS */
+        .boas-vindas {
+            background-color: #E6F0FA;
+            border-left: 8px solid #003366;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .boas-vindas h2 {
+            font-size: 1.6rem;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        /* CARTOES DE DICAS */
+        .cartao-dica {
+            background-color: #FFFFFF;
+            border: 3px solid #CCCCCC;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .cartao-dica h3 {
+            color: #003366;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icone {
+            font-size: 2rem;
+        }
+
+        .cartao-dica p {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* CAIXA DE ALERTA DENTRO DA DICA */
+        .alerta {
+            background-color: #FFF3CD;
+            border: 2px solid #FFEBAA;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* BOTÃO DE EMERGÊNCIA / AJUDA */
+        .secao-ajuda {
+            background-color: #D9534F; /* Vermelho visível */
+            color: #FFFFFF;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .secao-ajuda h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .secao-ajuda p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .botao-ajuda {
+            display: inline-block;
+            background-color: #FFFFFF;
+            color: #D9534F;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .botao-ajuda:hover, .botao-ajuda:focus {
+            background-color: #FFEBEE;
+            outline: 4px solid #FFCC00; /* Destaque visual para acessibilidade */
+        }
+
+        /* RODAPÉ */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: #FFFFFF;
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+
+        /* AJUSTES PARA TELAS MENORES (CELULARES) */
+        @media (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+            
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .cartao-dica h3 {
+                font-size: 1.3rem;
+            }
+        }
+    
