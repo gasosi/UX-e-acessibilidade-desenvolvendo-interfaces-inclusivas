@@ -1,185 +1,339 @@
-/* RESET E CONFIGURAÇÕES GERAIS DE ACESSIBILIDADE */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        :root {
+            --primary: #0F172A;
+            --primary-light: #1E293B;
+            --accent: #2563EB;
+            --accent-hover: #1D4ED8;
+            --danger: #DC2626;
+            --danger-hover: #B91C1C;
+            --warning-bg: #FEF3C7;
+            --warning-border: #F59E0B;
+            --warning-text: #92400E;
+            --bg-body: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #F4F6F9;
-    color: #1A1A1A;
-    line-height: 1.6;
-    font-size: 20px;
-    /* Fonte base ampliada */
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* CABEÇALHO FIXO E DE ALTO CONTRASTE */
-header {
-    background-color: #003366;
-    /* Azul escuro */
-    color: #FFFFFF;
-    padding: 20px 15px;
-    text-align: center;
-    border-bottom: 5px solid #FFCC00;
-    /* Amarelo para destaque */
-}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 1.125rem; /* ~18px base para facilitar leitura */
+            -webkit-font-smoothing: antialiased;
+        }
 
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
-}
+        header {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+            color: #FFFFFF;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
 
-header p {
-    font-size: 1.2rem;
-}
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
 
-/* CONTAINER PRINCIPAL */
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 15px;
-}
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-/* MENSAGEM DE BOAS-VINDAS */
-.boas-vindas {
-    background-color: #E6F0FA;
-    border-left: 8px solid #003366;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 25px;
-}
+        header p {
+            font-size: 1.2rem;
+            color: #93C5FD;
+            max-width: 600px;
+        }
 
-.boas-vindas h2 {
-    font-size: 1.6rem;
-    color: #003366;
-    margin-bottom: 10px;
-}
+        /* Botão principal de Ação/Ajuda */
+        .btn-emergencia-top {
+            margin-top: 0.5rem;
+            background-color: var(--danger);
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 0.85rem 1.75rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
+            transition: all 0.2s ease;
+        }
 
-/* CARTOES DE DICAS */
-.cartao-dica {
-    background-color: #FFFFFF;
-    border: 3px solid #CCCCCC;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        .btn-emergencia-top:hover, 
+        .btn-emergencia-top:focus {
+            background-color: var(--danger-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
+            outline: 3px solid #FCA5A5;
+        }
 
-.cartao-dica h3 {
-    color: #003366;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+        main {
+            max-width: 850px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
 
-.icone {
-    font-size: 2rem;
-}
+        /* Boas-Vindas */
+        .boas-vindas {
+            background-color: #EFF6FF;
+            border-left: 6px solid var(--accent);
+            padding: 1.75rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
 
-.cartao-dica p {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
+        .boas-vindas h2 {
+            font-size: 1.5rem;
+            color: #1E40AF;
+            margin-bottom: 0.5rem;
+        }
 
-/* CAIXA DE ALERTA DENTRO DA DICA */
-.alerta {
-    background-color: #FFF3CD;
-    border: 2px solid #FFEBAA;
-    color: #856404;
-    padding: 15px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
+        .boas-vindas p {
+            color: #1E3A8A;
+        }
 
-/* BOTÃO DE EMERGÊNCIA / AJUDA */
-.secao-ajuda {
-    background-color: #D9534F;
-    /* Vermelho visível */
-    color: #FFFFFF;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    margin-top: 30px;
+        /* Cartões de Dicas */
+        .cartao-dica {
+            background-color: var(--bg-card);
+            border: 1px solid #E2E8F0;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    width: 600px;
-    margin: 0 !important;
-}
+        .cartao-dica:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
 
-.secao-ajuda h2 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-}
+        .cartao-dica h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
-.secao-ajuda p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
+        .icone-badge {
+            background-color: #DBEAFE;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
 
-.contato-ajuda {
-    display: inline-block;
-    background-color: #FFFFFF;
-    color: #D9534F;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 50px;
-    border: 3px solid #FFFFFF;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
+        .cartao-dica p {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+        }
 
-.botao-ajuda:hover,
-.botao-ajuda:focus {
-    background-color: #FFEBEE;
-    outline: 4px solid #FFCC00;
-    /* Destaque visual para acessibilidade */
-}
+        /* Alertas visuais dentro das dicas */
+        .alerta {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            color: var(--warning-text);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
 
-/* RODAPÉ */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #003366;
-    color: #FFFFFF;
-    margin-top: 40px;
-    font-size: 1rem;
-}
+        .modal-fundo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 9999;
+            display: none; /* Escondido por padrão */
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
+        .modal-fundo.visivel {
+            display: flex;
+            opacity: 1;
+        }
 
-.modal-fundo{
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-}
+        .modal-conteudo {
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 650px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            border: 1px solid #E2E8F0;
+        }
 
-ol {
-    padding: 40px;
-}
+        .modal-fundo.visivel .modal-conteudo {
+            transform: scale(1);
+        }
 
-/* AJUSTES PARA TELAS MENORES (CELULARES) */
-@media (max-width: 600px) {
-    body {
-        font-size: 18px;
-    }
+        .modal-cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #F1F5F9;
+            padding-bottom: 1rem;
+        }
 
-    header h1 {
-        font-size: 1.6rem;
-    }
+        .modal-cabecalho h2 {
+            color: var(--danger);
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-    .cartao-dica h3 {
-        font-size: 1.3rem;
-    }
-}
+        .botao-fechar-x {
+            background: #F1F5F9;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .botao-fechar-x:hover,
+        .botao-fechar-x:focus {
+            background-color: #E2E8F0;
+            color: var(--primary);
+            outline: 2px solid var(--accent);
+        }
+
+        .modal-conteudo ol {
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .modal-conteudo li {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .modal-conteudo li strong {
+            color: var(--primary);
+        }
+
+        .modal-rodape {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            border-top: 2px solid #F1F5F9;
+            padding-top: 1.25rem;
+        }
+
+        .botao-fechar {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .botao-fechar:hover,
+        .botao-fechar:focus {
+            background-color: var(--primary-light);
+            outline: 3px solid #94A3B8;
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: #94A3B8;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: 4rem;
+            font-size: 1rem;
+            border-top: 1px solid var(--primary-light);
+        }
+
+        footer strong {
+            color: #F8FAFC;
+        }
+
+        /* Ajustes para telas menores */
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            main {
+                margin: 1.5rem auto;
+            }
+
+            .cartao-dica {
+                padding: 1.5rem;
+            }
+
+            .modal-conteudo {
+                padding: 1.5rem;
+            }
+
+            .btn-emergencia-top {
+                width: 100%;
+                justify-content: center;
+            }
+        }
